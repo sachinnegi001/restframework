@@ -1,0 +1,76 @@
+{% extends 'myapp/base.html'  %}
+
+{% block content %}
+
+
+    <div class="col-sm-7 offset-2">
+        
+
+        <h4  class="text-center alert alert-info">Show Employee Information</h4>
+        
+
+        {% if stu %}
+    
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" >Intensity</th>
+                        <th scope="col">Likelihood</th>
+                     
+                        <th scope="col">Country</th>
+                        <th scope="col">Topic</th>
+                        <th scope="col">region</th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for st in stu %}
+    
+                    <tr>
+                        
+                        <td>{{st.intensity}}</td>
+                        <td>{{st.likelihood}}</td>
+                        <td>{{st.country}}</td>
+                        <td>{{st.topic}}</td>
+                        <td>{{st.region}}</td>
+                        
+     
+    
+                        
+    
+    
+                    </tr>
+    
+                    {% endfor %}
+                </tbody>
+    
+    
+    
+    
+            </table>
+        
+            
+    
+        
+        {% else %}
+         <h4 >no record</h4>
+    
+    
+        {% endif %}
+
+        <!-- <button type="submit" class="btn btn-outline-success" href="{url 'add'}"  >Back To Add </button> -->
+        <a href="{%url 'add'%}">
+
+            <button type="submit" class="btn btn-outline-success" >Back To Add </button>
+            
+          </a>
+    
+    </div>
+    
+    
+    
+    </div>
+
+        
+    
+{% endblock content %}

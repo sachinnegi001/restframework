@@ -1,0 +1,38 @@
+
+
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assignment</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.css' %}">
+</head>
+<body>
+      
+<div class="row" style="margin-left: 67px;" >
+
+    <div class="col-sm-8">
+     <h4 class="text-center alert alert-info">Add New Details</h4>
+
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" class="btn btn-success" value="Save">
+            <a href="{%url 'show'%}">
+
+                <button type="button" class="btn btn-outline-success" >Show Data</button>
+                
+              </a>
+            
+        </form><br>
+        
+
+    </div>
+</body>
+
+</html>
